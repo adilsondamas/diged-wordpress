@@ -100,7 +100,7 @@ Os presets são destinados a blocos de texto. Aplicá-los a um container não ga
 
 - Micro/componente: 20 = 4 px, 30 = 8 px, 40 = 16 px, 50 = 24 px, 60 = 32 px, 70 = 48 px.
 - Macro/layout: 80 = 64 px (4rem), 90 = 96 px (6rem), 100 = 128 px (8rem).
-- Mantidos: intervalo padrão entre blocos no token 50 e margens laterais no token 40. Os novos tokens macro não foram aplicados automaticamente a páginas ou templates.
+- Mantidos: intervalo padrão entre blocos no token 50 e margens laterais no token 40. Os tokens macro só são aplicados quando selecionados no conteúdo, como no pattern CREATE V1.
 
 ### Contraste calculado
 
@@ -164,3 +164,54 @@ Proveniência e integridade dos arquivos:
 Revisão local: tokens, sintaxe e propriedades do schema WordPress 6.6, referências de presets/arquivos, extremos de clamp, assinatura WOFF2, licença e contrastes. Sem dependências instaladas. A renderização no Gutenberg/WordPress não foi executada localmente: este ambiente não dispõe de WordPress/PHP.
 
 Após aprovação, conferir no staging: carregamento local dos subconjuntos variáveis e pesos 400/500/600/700, acentos em português, negrito/itálico, paridade editor/frontend, seletores restritos, foco de teclado e layout em 320 px e desktop com zoom de 200%. Estilos globais anteriormente salvos no banco podem sobrepor os arquivos e devem ser inspecionados antes de concluir a validação visual. Nenhum commit, push ou deploy integra esta etapa sem autorização.
+
+
+## CREATE V1 — pattern para validação
+
+`patterns/create-v1.php` registra automaticamente o pattern **CREATE V1** (`diged/create-v1`) na categoria nativa Destaques. O arquivo PHP contém apenas o cabeçalho de registro e markup de blocos, sem lógica, queries ou criação de conteúdo. Não requer functions.php, plugins, template exclusivo ou bloco personalizado.
+
+### Inserção manual no WordPress
+
+Após autorização de deploy, criar uma página chamada **CREATE**, slug **create**, selecionando o template **Página com título no conteúdo** (`content-title`) nas configurações da página. No editor, inserir **CREATE V1** pelo seletor de patterns (Destaques). Salvar como rascunho e visualizar antes de publicar. Não inserir o pattern duas vezes na mesma página: ele contém âncoras fixas.
+
+O hero contém o único H1, com preset Display XL. O template optativo não imprime o título administrativo CREATE; o template padrão de páginas, header e footer permanecem intactos. O pattern é uma composição inicial não sincronizada: após inserido, seu conteúdo fica no banco e é editável; mudanças futuras no arquivo não atualizam cópias já inseridas.
+
+### Estrutura
+
+Sete grupos section: hero, desafio, entregas, contextos de uso, processo, diferencial e CTA final. Composição em uma coluna, grupos, parágrafos, headings H1/H2/H3, separadores e botões nativos. Não há imagens, ícones, formulários, cards, scripts ou animações.
+
+- CTA secundário → `#como-funciona`.
+- CTA primário → `#conversar` (seção final).
+- CTA final → `#contato-provisorio`, aviso visível de que o canal está pendente e não envia mensagens. Substituir somente quando o destino real for aprovado.
+
+### Decisões provisórias de composição
+
+- Uma coluna editorial limitada à largura de conteúdo existente, sem alargamentos ou grids novos.
+- Hero em Display XL; contextos, diferencial e CTA final em Display; demais títulos de seção em H2.
+- Ritmo macro provisório, em padding de topo e rodapé: hero 128 px (100); desafio 64 px (80); entregas 96 px (90); contextos de uso 96 px (90); processo 64 px (80); diferencial 96 px (90); CTA final 96 px (90). Margens internas laterais de 16 px (40) e intervalos internos de 32 px (60) preservados. Esses paddings se somam entre seções adjacentes, além do intervalo do grupo externo; não representam a distância total entre conteúdos. Nesta V1 são iguais em mobile/desktop, sem CSS de breakpoint. Validar especialmente a extensão vertical no mobile antes de considerar o ritmo definitivo.
+- Entregas em superfície off-white e separadores grafite; diferencial preto com textos brancos e label azul. Não há texto coral sobre off-white ou preto.
+- Botões primários coral/branco, secundário branco/preto com estilo outline nativo, bordas retas. Apenas atributos de blocos; nenhum CSS adicional. Botões podem quebrar texto e a linha de botões usa flex-wrap.
+- “Lançar / Apresentar / Mobilizar” em três linhas explícitas no mesmo H2. O hero inclui oportunidades opcionais de hifenização em “comunicação” e “movimento” para telas estreitas, sem alterar a copy visível quando houver espaço.
+
+### Validação e limites
+
+Verificar localmente: comentários/atributos de blocos, marcação HTML, âncoras únicas com destinos existentes, copy, cores e ausência de mudanças em theme.json, templates ou parts. Nenhum CSS, JS ou PHP funcional foi adicionado.
+
+A validação local é estática: não há WordPress/PHP neste ambiente. No staging, conferir ausência de avisos de blocos inválidos no editor, largura de 320/390/768/1440 px, zoom de 200%, foco de teclado, acentos, hifenização, títulos com entrelinha abaixo de 1, quebra dos CTAs e ausência de overflow. Não há alturas fixas ou overflow oculto para cortar texto. Conferir também possíveis estilos salvos no banco e margens que o WordPress aplica aos grupos com fundo.
+
+Esta V1 não é o design final. Não cria a página por código e não foi publicada automaticamente.
+
+
+### Template optativo: Página com título no conteúdo
+
+Arquivo `templates/content-title.html`, slug `content-title`, registrado em `customTemplates` no theme.json para páginas (`postTypes: ["page"]`). Equivale ao template padrão, removendo somente `core/post-title`. Mantém header, main, post-content e footer. Não muda `templates/page.html` e não é exclusivo de CREATE.
+
+Selecionar esse template manualmente para CREATE. O nome CREATE permanece no cadastro da página; a frase principal do hero é o H1 visível. Em outras páginas que adotarem esse template, o editor deve garantir um H1 no conteúdo.
+
+Hierarquia do pattern: label DIG.ED CREATE em parágrafo; frase do hero como único H1; seis títulos de seção em H2; três entregas, três contextos de uso e cinco etapas em H3. A escolha de Display/Display XL altera a aparência, não o nível semântico.
+
+### Limitação de macrospacing responsivo
+
+Os atributos de padding dos grupos nativos usados nesta composição não aceitam valores por breakpoint, e theme.json não oferece uma configuração equivalente para essa instância. Os valores mobile propostos (hero 96 px, demais seções 64 px) exigiriam CSS responsivo adicional ou outra estratégia de composição. Conforme orientação, não foi acrescentado CSS nem forçada uma solução fluida que alterasse os valores solicitados.
+
+Mantido neste momento, em topo e rodapé: hero 128; desafio 64; entregas 96; contextos 96; processo 64; diferencial 96; CTA final 96 px, tanto em desktop quanto mobile. A redução fica pendente da inspeção visual. Nenhum token global foi alterado.

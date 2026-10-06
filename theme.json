@@ -370,5 +370,14 @@
       "title": "Rodapé",
       "area": "footer"
     }
+  ],
+  "customTemplates": [
+    {
+      "name": "content-title",
+      "title": "Página com título no conteúdo",
+      "postTypes": [
+        "page"
+      ]
+    }
   ]
 }
