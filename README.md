@@ -1,6 +1,6 @@
 # DIG.ED — WordPress
 
-Fundação do tema próprio de blocos. Código em `themes/diged/`.
+Repositório dedicado ao tema próprio de blocos DIG.ED. A raiz contém diretamente os arquivos do tema e corresponde a `wp-content/themes/diged` na instalação WordPress.
 WordPress mínimo: 6.6 (`theme.json` versão 3). Usar uma versão estável mantida do WordPress e PHP no ambiente de destino.
 
 ## Escopo
@@ -24,7 +24,7 @@ As larguras, margens laterais e entrelinha em theme.json são parâmetros técni
 
 ## Validação em WordPress — somente após autorização do ambiente
 
-1. Em uma instalação local descartável ou staging autorizado, copiar `themes/diged` para `wp-content/themes/diged`. Para upload pelo painel, o ZIP deve conter a pasta `diged` na raiz, não o repositório inteiro.
+1. Em uma instalação local descartável ou staging autorizado, copiar os arquivos versionados da raiz deste repositório para `wp-content/themes/diged`. Para upload pelo painel, empacotar esses arquivos dentro de uma única pasta `diged` no ZIP, sem incluir `.git/`.
 2. Em Aparência → Temas, conferir DIG.ED e ativar. Abrir Aparência → Editor; verificar que templates e partes abrem sem avisos de blocos inválidos.
 3. Criar conteúdo temporário de teste. Pela hierarquia do WordPress, `front-page.html` tem precedência na página inicial independentemente da opção em Configurações → Leitura; uma página estática não é requisito técnico para carregar o template. Para testar os blocos de título e conteúdo desta fundação com uma página específica, selecionar uma página inicial estática. O template atual não contém um Query Loop: a opção de posts recentes não o transforma automaticamente em uma listagem. Referência: https://developer.wordpress.org/themes/templates/template-hierarchy/#front-page-hierarchy
 4. Editar título e conteúdo da página, salvar e conferir o frontend. Testar página comum e post individual.
@@ -39,4 +39,16 @@ Os arquivos do tema são a fonte de verdade. Personalizações de templates e es
 
 Não incluir banco, credenciais, uploads ou o núcleo WordPress neste repositório. Nenhum deploy ou alteração no staging/produção faz parte desta entrega.
 
-Commit sugerido: `feat(theme): add minimal DIG.ED block theme foundation`
+## Fluxo de publicação manual
+
+`Codex/local → main → GitHub → deploy manual Hostinger → wp-content/themes/diged`
+
+- Usar somente a branch `main`, no remoto `origin` (`https://github.com/adilsondamas/diged-wordpress.git`).
+- Revisar e validar localmente, criar o commit e fazer push para `origin/main`.
+- Na integração Git da Hostinger do staging, selecionar este repositório e a branch `main`. O destino deve ser a pasta do tema: `public_html/wp-content/themes/diged`, relativo ao site correto. Não usar `public_html/wp-content` como destino.
+- Manter auto-deploy desativado. Executar deploy/redeploy manual somente após autorização. Configurar a integração inicialmente também pode disparar um deploy e exige autorização.
+- A raiz do repositório é publicada diretamente no destino, sem etapa de build, branch de deploy, GitHub Actions ou dependências adicionais. `README.md` e `.gitignore` permanecem na raiz do tema por decisão do projeto.
+- Antes da primeira publicação, confirmar no painel o caminho do staging e as condições para arquivos já existentes no destino. Não apagar pastas de WordPress, plugins ou uploads para preparar o deploy.
+- Registrar o hash publicado e manter backup do tema. Para rollback, restaurar a versão aprovada por um novo commit na `main`, fazer push e redeploy manual. Dados e personalizações salvos no banco exigem backup separado.
+
+A estrutura do tema pode ser validada localmente; ativação e renderização precisam de uma instalação WordPress. Esta reorganização não realiza deploy nem ativação.
