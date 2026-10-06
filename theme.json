@@ -4,20 +4,360 @@
   "settings": {
     "layout": {
       "contentSize": "48rem",
-      "wideSize": "72rem"
+      "wideSize": "72rem",
+      "allowCustomContentAndWideSize": false
     },
-    "useRootPaddingAwareAlignments": true
+    "useRootPaddingAwareAlignments": true,
+    "appearanceTools": false,
+    "color": {
+      "custom": false,
+      "customDuotone": false,
+      "customGradient": false,
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "defaultDuotone": false,
+      "gradients": [],
+      "duotone": [],
+      "palette": [
+        {
+          "slug": "brand",
+          "name": "Coral · marca",
+          "color": "#CB4129"
+        },
+        {
+          "slug": "accent",
+          "name": "Azul-céu · funcional",
+          "color": "#52B8F2"
+        },
+        {
+          "slug": "black",
+          "name": "Preto",
+          "color": "#000000"
+        },
+        {
+          "slug": "graphite",
+          "name": "Grafite",
+          "color": "#303030"
+        },
+        {
+          "slug": "off-white",
+          "name": "Off-white",
+          "color": "#F3F1EE"
+        },
+        {
+          "slug": "white",
+          "name": "Branco",
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    "typography": {
+      "customFontSize": false,
+      "defaultFontSizes": false,
+      "dropCap": false,
+      "fontStyle": false,
+      "fontWeight": false,
+      "letterSpacing": false,
+      "lineHeight": false,
+      "textTransform": false,
+      "textDecoration": false,
+      "fluid": false,
+      "fontFamilies": [
+        {
+          "slug": "primary",
+          "name": "Work Sans",
+          "fontFamily": "\"Work Sans\", system-ui, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Work Sans",
+              "fontStyle": "italic",
+              "fontWeight": "400 700",
+              "fontDisplay": "swap",
+              "unicodeRange": "U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB",
+              "src": [
+                "file:./assets/fonts/work-sans/WorkSans-italic-vietnamese.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Work Sans",
+              "fontStyle": "italic",
+              "fontWeight": "400 700",
+              "fontDisplay": "swap",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF",
+              "src": [
+                "file:./assets/fonts/work-sans/WorkSans-italic-latin-ext.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Work Sans",
+              "fontStyle": "italic",
+              "fontWeight": "400 700",
+              "fontDisplay": "swap",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+              "src": [
+                "file:./assets/fonts/work-sans/WorkSans-italic-latin.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Work Sans",
+              "fontStyle": "normal",
+              "fontWeight": "400 700",
+              "fontDisplay": "swap",
+              "unicodeRange": "U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB",
+              "src": [
+                "file:./assets/fonts/work-sans/WorkSans-normal-vietnamese.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Work Sans",
+              "fontStyle": "normal",
+              "fontWeight": "400 700",
+              "fontDisplay": "swap",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF",
+              "src": [
+                "file:./assets/fonts/work-sans/WorkSans-normal-latin-ext.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Work Sans",
+              "fontStyle": "normal",
+              "fontWeight": "400 700",
+              "fontDisplay": "swap",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+              "src": [
+                "file:./assets/fonts/work-sans/WorkSans-normal-latin.woff2"
+              ]
+            }
+          ]
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "display-xl",
+          "name": "Display XL",
+          "size": "clamp(3.25rem, 2.22857143rem + 4.19047619vw, 6rem)"
+        },
+        {
+          "slug": "display",
+          "name": "Display",
+          "size": "clamp(2.75rem, 2.10000000rem + 2.66666667vw, 4.5rem)"
+        },
+        {
+          "slug": "h1",
+          "name": "H1",
+          "size": "clamp(2.5rem, 2.12857143rem + 1.52380952vw, 3.5rem)"
+        },
+        {
+          "slug": "h2",
+          "name": "H2",
+          "size": "clamp(2rem, 1.81428571rem + 0.76190476vw, 2.5rem)"
+        },
+        {
+          "slug": "h3",
+          "name": "H3",
+          "size": "clamp(1.5rem, 1.40714286rem + 0.38095238vw, 1.75rem)"
+        },
+        {
+          "slug": "h4",
+          "name": "H4",
+          "size": "clamp(1.25rem, 1.20357143rem + 0.19047619vw, 1.375rem)"
+        },
+        {
+          "slug": "lead",
+          "name": "Lead",
+          "size": "clamp(1.3125rem, 1.24285714rem + 0.28571429vw, 1.5rem)"
+        },
+        {
+          "slug": "body-l",
+          "name": "Body L",
+          "size": "clamp(1.125rem, 1.07857143rem + 0.19047619vw, 1.25rem)"
+        },
+        {
+          "slug": "body",
+          "name": "Body",
+          "size": "1rem"
+        },
+        {
+          "slug": "small",
+          "name": "Small",
+          "size": "0.875rem"
+        },
+        {
+          "slug": "label",
+          "name": "Label",
+          "size": "0.875rem"
+        },
+        {
+          "slug": "button",
+          "name": "Button",
+          "size": "1rem"
+        }
+      ]
+    },
+    "spacing": {
+      "customSpacingSize": false,
+      "defaultSpacingSizes": false,
+      "spacingSizes": [
+        {
+          "slug": "20",
+          "name": "1 · 4 px",
+          "size": "0.25rem"
+        },
+        {
+          "slug": "30",
+          "name": "2 · 8 px",
+          "size": "0.5rem"
+        },
+        {
+          "slug": "40",
+          "name": "3 · 16 px",
+          "size": "1rem"
+        },
+        {
+          "slug": "50",
+          "name": "4 · 24 px",
+          "size": "1.5rem"
+        },
+        {
+          "slug": "60",
+          "name": "5 · 32 px",
+          "size": "2rem"
+        },
+        {
+          "slug": "70",
+          "name": "6 · 48 px",
+          "size": "3rem"
+        },
+        {
+          "slug": "80",
+          "name": "Macro · 64 px",
+          "size": "4rem"
+        },
+        {
+          "slug": "90",
+          "name": "Macro · 96 px",
+          "size": "6rem"
+        },
+        {
+          "slug": "100",
+          "name": "Macro · 128 px",
+          "size": "8rem"
+        }
+      ],
+      "padding": true,
+      "margin": true,
+      "blockGap": true,
+      "units": [
+        "rem"
+      ]
+    },
+    "border": {
+      "color": false,
+      "radius": false,
+      "style": false,
+      "width": false
+    },
+    "shadow": {
+      "defaultPresets": false,
+      "presets": []
+    }
   },
   "styles": {
     "spacing": {
       "padding": {
-        "left": "1rem",
-        "right": "1rem"
-      }
+        "left": "var:preset|spacing|40",
+        "right": "var:preset|spacing|40"
+      },
+      "blockGap": "var:preset|spacing|50"
     },
     "typography": {
-      "lineHeight": "1.5"
-    }
+      "fontFamily": "var:preset|font-family|primary",
+      "fontSize": "var:preset|font-size|body",
+      "fontWeight": "400",
+      "lineHeight": "1.55"
+    },
+    "color": {
+      "text": "var:preset|color|graphite",
+      "background": "var:preset|color|white"
+    },
+    "elements": {
+      "heading": {
+        "color": {
+          "text": "var:preset|color|black"
+        },
+        "typography": {
+          "fontWeight": "600",
+          "lineHeight": "1.2",
+          "letterSpacing": "0em"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "var:preset|color|brand"
+        },
+        "typography": {
+          "textDecoration": "underline"
+        }
+      },
+      "h1": {
+        "typography": {
+          "fontSize": "var:preset|font-size|h1",
+          "fontWeight": "600",
+          "lineHeight": "1",
+          "letterSpacing": "-0.02em"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontSize": "var:preset|font-size|h2",
+          "fontWeight": "600",
+          "lineHeight": "1.05",
+          "letterSpacing": "-0.02em"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontSize": "var:preset|font-size|h3",
+          "fontWeight": "600",
+          "lineHeight": "1.15",
+          "letterSpacing": "0em"
+        }
+      },
+      "h4": {
+        "typography": {
+          "fontSize": "var:preset|font-size|h4",
+          "fontWeight": "600",
+          "lineHeight": "1.2",
+          "letterSpacing": "0em"
+        }
+      },
+      "h5": {
+        "typography": {
+          "fontSize": "var:preset|font-size|body",
+          "fontWeight": "600",
+          "lineHeight": "1.2",
+          "letterSpacing": "0em"
+        }
+      },
+      "h6": {
+        "typography": {
+          "fontSize": "var:preset|font-size|small",
+          "fontWeight": "600",
+          "lineHeight": "1.2",
+          "letterSpacing": "0em"
+        }
+      },
+      "button": {
+        "typography": {
+          "fontFamily": "var:preset|font-family|primary",
+          "fontSize": "var:preset|font-size|button",
+          "fontWeight": "600",
+          "lineHeight": "1.2",
+          "letterSpacing": "0em"
+        }
+      }
+    },
+    "css": ".has-display-xl-font-size { font-weight: 600; line-height: 0.92; letter-spacing: -0.03em; }\n.has-display-font-size { font-weight: 600; line-height: 0.95; letter-spacing: -0.03em; }\n.has-h1-font-size { font-weight: 600; line-height: 1; letter-spacing: -0.02em; }\n.has-h2-font-size { font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; }\n.has-h3-font-size { font-weight: 600; line-height: 1.15; letter-spacing: 0em; }\n.has-h4-font-size { font-weight: 600; line-height: 1.2; letter-spacing: 0em; }\n.has-lead-font-size { font-weight: 400; line-height: 1.4; letter-spacing: 0em; }\n.has-body-l-font-size { font-weight: 400; line-height: 1.5; letter-spacing: 0em; }\n.has-body-font-size { font-weight: 400; line-height: 1.55; letter-spacing: 0em; }\n.has-small-font-size { font-weight: 400; line-height: 1.45; letter-spacing: 0em; }\n.has-label-font-size { font-weight: 600; line-height: 1.2; letter-spacing: 0em; }\n.has-button-font-size { font-weight: 600; line-height: 1.2; letter-spacing: 0em; }"
   },
   "templateParts": [
     {
