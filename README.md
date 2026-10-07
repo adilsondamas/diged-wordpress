@@ -335,3 +335,23 @@ Até 1024 px: logo 180 px (aproximadamente 45 px de altura), padding vertical 24
 CSS em styles.css dentro de theme.json, restrito ao header/classes diged-header: dimensões do ativo, alinhamento, padding, mínimo de toque 44 px, hover coral, foco preto com outline e breakpoint do Navigation. Preto/branco 21:1; coral/branco aproximadamente 4.85:1. O link da marca tem nome acessível `DIG.ED — início`. Escala tipográfica e paleta não foram alteradas.
 
 Validação local: JSON, comentários/atributos de blocos, caminhos de arquivos, integridade pixel a pixel do recorte, preservação das CREATE/templates/footer e ausência de JS/plugin. Sem PHP/WordPress local para executar o pattern e validar serialização/renderização. Conferir após autorização no WordPress: logo/URL, menu em 390/768/1024/1440 px, Tab/Shift+Tab, Enter, Escape, foco no retorno e ausência de overflow. Customizações anteriores do header no banco podem prevalecer sobre parts/header.html; revisar no Editor do Site sem apagar alterações não auditadas. Nenhum commit, push ou deploy nesta etapa.
+
+## Header V2 — Shift (local)
+
+Evolução sobre Header V1. Ativo, tamanhos 200/180 px, fundo branco, container 76rem e Navigation nativo preservados. Nenhum JS, plugin, framework ou animação de entrada. Somente transições CSS de 180 ms.
+
+Desktop: normal preto; hover/focus/active e página atual coral. O texto sobe 2 px em hover/focus; a área clicável não se desloca. Página atual usa os indicadores nativos `aria-current="page"` ou `current-menu-item`. O CTA mantém peso 600, perde sublinhado permanente e ganha ↗ em span aria-hidden, com deslocamento adicional de 2 px na diagonal. Nome acessível continua Vamos conversar. Não há conteúdo duplicado para produzir o efeito.
+
+Mobile/tablet até 1024 px: mecanismo nativo de abertura/fechamento. Overlay preto fixo cobre viewport, permite rolagem quando necessário e apresenta botão fechar branco. Links principais variam localmente de 32 a 48 px, entrelinha 1.15, com intervalos de 24 px. CTA fica abaixo, empurrado por margin-top:auto, divisor grafite e texto branco 16 px com seta coral. A página atual dos links principais é coral; o CTA conserva branco por legibilidade (coral/preto 4.33:1 não atende AA para texto corrente). Áreas mínimas 44 px. Foco preto no header claro e branco no menu preto. `prefers-reduced-motion: reduce` elimina transições e transforms, mantendo mudanças de cor e foco.
+
+### Header × Hero
+
+Origem identificada no código: header com padding inferior 32 px desktop / 24 px mobile, hero com padding superior 128 px desktop / 96 px até 1024, somados ao intervalo global entre blocos (24 px quando aplicado pelo WordPress). Não foi atribuída uma medida visual real do staging a essa soma.
+
+Uma única regra contextual (`.wp-site-blocks > header:has(.diged-header) + main .diged-create-v2 > section:first-child`) passa apenas o topo do primeiro hero a 64 px. Redução de 64 px desktop ou 32 px tablet/mobile. Header, logo, H1, padding inferior do hero e demais seções preservados. A regra requer header seguido de main, estrutura dos templates atuais; sem suporte a :has em navegadores antigos, permanece o espaçamento anterior. Não muda a marcação das CREATE nem o footer.
+
+### Limitações a validar
+
+Sem WordPress local para verificar a interface final. Confirmar serialização do HTML inline no label de Navigation Link, aria-hidden da seta no DOM, identificação nativa da página atual com URLs relativas, Escape, captura/retorno de foco, rolagem no overlay e editor. Não foram acrescentados JS para foco nem lógica própria de página atual. Se a versão do WordPress não identificar links customizados relativos como atuais, revisar o vínculo dos itens a páginas reais no editor; não inferir esse estado com CSS por URL.
+
+Mudanças no pattern de header não substituem automaticamente versões personalizadas de template parts/menus salvas no banco. Auditar o header efetivamente renderizado após deploy autorizado. Transições, elevação tipográfica e CTA inferior são hipóteses para validação; nenhum deploy nesta etapa.

@@ -13,11 +13,11 @@
 <!-- wp:image {"sizeSlug":"full","linkDestination":"custom","className":"diged-header__brand"} -->
 <figure class="wp-block-image size-full diged-header__brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/diged-logo-web.png' ) ); ?>" alt="DIG.ED — início" width="894" height="222"/></a></figure>
 <!-- /wp:image -->
-<!-- wp:navigation {"textColor":"black","backgroundColor":"white","overlayTextColor":"black","overlayBackgroundColor":"white","overlayMenu":"mobile","fontSize":"button","layout":{"type":"flex","justifyContent":"right"}} -->
+<!-- wp:navigation {"textColor":"black","backgroundColor":"white","overlayTextColor":"white","overlayBackgroundColor":"black","overlayMenu":"mobile","fontSize":"button","layout":{"type":"flex","justifyContent":"right"}} -->
 <!-- wp:navigation-link {"label":"CREATE","type":"custom","url":"/create/","kind":"custom"} /-->
 <!-- wp:navigation-link {"label":"LEARN","type":"custom","url":"/learn/","kind":"custom"} /-->
 <!-- wp:navigation-link {"label":"Sobre","type":"custom","url":"/sobre/","kind":"custom"} /-->
-<!-- wp:navigation-link {"label":"Vamos conversar","type":"custom","url":"/contato/","kind":"custom","className":"diged-header__contact"} /-->
+<!-- wp:navigation-link {"label":"Vamos conversar <span class=\"diged-header__arrow\" aria-hidden=\"true\">↗</span>","type":"custom","url":"/contato/","kind":"custom","className":"diged-header__contact"} /-->
 <!-- /wp:navigation -->
 </div>
 <!-- /wp:group -->
