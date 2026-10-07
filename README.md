@@ -215,3 +215,50 @@ Hierarquia do pattern: label DIG.ED CREATE em parágrafo; frase do hero como ún
 Os atributos de padding dos grupos nativos usados nesta composição não aceitam valores por breakpoint, e theme.json não oferece uma configuração equivalente para essa instância. Os valores mobile propostos (hero 96 px, demais seções 64 px) exigiriam CSS responsivo adicional ou outra estratégia de composição. Conforme orientação, não foi acrescentado CSS nem forçada uma solução fluida que alterasse os valores solicitados.
 
 Mantido neste momento, em topo e rodapé: hero 128; desafio 64; entregas 96; contextos 96; processo 64; diferencial 96; CTA final 96 px, tanto em desktop quanto mobile. A redução fica pendente da inspeção visual. Nenhum token global foi alterado.
+
+## CREATE V2 — composição ampla e experimento cromático
+
+Pattern novo `patterns/create-v2.php`, nome **CREATE V2**, slug `diged/create-v2`. A V1 permanece disponível para comparação. Inserir a V2 em uma página/rascunho usando **Página com título no conteúdo**; não inserir V1 e V2 juntas, pois compartilham âncoras. Patterns não sincronizados já inseridos não são atualizados pelo arquivo: substituir a instância deliberadamente ou usar um rascunho de comparação.
+
+### Estrutura e larguras locais
+
+Os tokens globais atuais são contentSize 48rem (768 px) e wideSize 72rem (1152 px). Não foram alterados: não atendem exatamente aos limites propostos e mudar globalmente afetaria outras páginas.
+
+A V2 usa configurações nativas locais de layout dos grupos: wide 76rem (1216 px), content 64rem (1024 px), text 42rem (672 px), na referência de 16 px. Textos de leitura em grupos estreitos ficam alinhados à esquerda, e não centralizados dentro do espaço disponível. Limites são máximos, não larguras fixas de viewport.
+
+O único ajuste de template é `align: full` no bloco post-content de `templates/content-title.html`: libera os alinhamentos full dos patterns sem remover o layout constrained para blocos comuns. Sem isso, a área de conteúdo era limitada pelo main a 768 px antes mesmo de chegar ao pattern. Template padrão de página e parts não mudaram.
+
+- Hero: área de 1216 px, Display XL preservado, lead limitado a 672 px. CTA secundário mantém branco/preto e ganha borda preta explícita de 2 px por atributo nativo do botão.
+- Desafio: colunas 25/75 para label e conteúdo, área de 1024 px.
+- Entregas: superfície coral full; interior de 1216 px; três colunas coordenadas, cada uma com linha branca nativa acima. Sem cards ou bordas laterais que precisariam mudar no mobile.
+- Onde CREATE entra: duas áreas 50/50 dentro de 1216 px; statement à esquerda e explicações à direita. “Apresentar.” tem marcação inline de cor coral, mantendo o mesmo H2 e fundo transparente.
+- Processo: linhas com colunas 10/25/65 para número, H3 e explicação, com separadores horizontais; preserva o travessão da copy no campo do número.
+- Diferencial: superfície preta full, conteúdo alinhado a 1216 px e parágrafos a 672 px; branco e label azul preservados.
+- CTA final: statement em área de 1216 px, mantendo Display; texto a 672 px e destino provisório preservado.
+
+A copy visível é idêntica à V1, incluindo os CTAs e aviso provisório. Hierarquia preservada: 1 H1, 6 H2 e 11 H3. Nada de imagens, ícones, animação ou componentes customizados.
+
+### Contraste dos experimentos
+
+Luminância relativa sRGB, WCAG AA para texto corrente: mínimo 4.5:1.
+
+| Texto / fundo | Ratio | Decisão |
+| --- | --- | --- |
+| Branco / coral | 4.85:1 | Aplicado em todo o conteúdo de Entregas |
+| Preto / coral | 4.33:1 | Não aplicado ao texto corrente |
+| Grafite / coral | 2.72:1 | Rejeitado |
+| Coral / branco | 4.85:1 | Aplicado a “Apresentar.” e ao H2 inteiro do Processo |
+| Branco / preto | 21:1 | Preservado no Diferencial |
+| Azul / preto | 9.50:1 | Preservado apenas como acento secundário |
+
+Divisores brancos no coral usam o separador nativo, com sua opacidade padrão; são organização decorativa, não contornos de controles ou portadores exclusivos de informação. A percepção final deve ser conferida com o CSS gerado no WordPress. Nenhuma cor nova foi criada.
+
+### Responsividade e limitações
+
+Columns usa empilhamento nativo em telas estreitas (breakpoint padrão do WordPress, normalmente 782 px). Não foram criados breakpoints específicos, CSS adicional ou regras de tablet. Ao empilhar, a ordem de leitura permanece label → conteúdo e número → título → explicação.
+
+Os paddings macro anteriores permanecem: 128/64/96/96/64/96/96 px, inclusive no mobile. Redução por breakpoint não é oferecida pelos atributos de padding usados. Se a inspeção confirmar a necessidade, a proposta é CSS mínimo restrito à raiz da CREATE V2 e suas seções, com media query para trocar apenas padding vertical pelos tokens 96 no hero e 64 nos demais. Esse CSS NÃO foi implementado.
+
+Conferir no WordPress a faixa full com o root padding, largura efetiva do post-content, colunas na transição de tablet, quebra dos botões, palavras longas dos displays e ausência de overflow em 320/390/768/1024/1440 px. Se necessário, propor ajuste de breakpoint somente para as colunas da CREATE V2, sem reduzir tokens tipográficos globais. A V2 não foi renderizada em um WordPress local nesta etapa: validação executada é estática, não prova visual ou de serialização pelo editor.
+
+Validação local: atributos JSON e pares de blocos, HTML, igualdade da copy normalizada com V1, âncoras, headings, cálculo de contraste e preservação byte a byte de theme.json, V1, page.html e parts. Nenhum commit, push ou deploy nesta rodada.
