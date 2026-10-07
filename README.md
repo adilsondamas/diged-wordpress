@@ -379,3 +379,8 @@ Linha institucional inferior: DIG.ED, © 2026 DIG.ED e Privacidade. Em mobile, e
 CSS adicional em styles.css dentro de theme.json, somente seletores `.diged-footer`, para padding, assinatura mobile, navegação, rodapé institucional, interações e movimento reduzido. Header, CREATE, templates, paleta, wordmark e tokens tipográficos não mudam.
 
 Validação local: JSON, blocos estáticos e referências; integridade dos arquivos protegidos; ausência de scripts próprios. Não há PHP/WordPress local para executar o pattern: conferir no staging autorizado a execução PHP, reconhecimento dos blocos, links/estado atual, configuração de privacidade, teclado, foco, zoom e 320/390/781/1440 px. Templates/menus salvos no banco podem prevalecer e não são alterados pelo arquivo do pattern automaticamente. Nenhum commit, push ou deploy nesta etapa.
+
+
+### Footer V1 — ritmo da navegação mobile
+
+Somente até 781 px: padding vertical dos links de navegação reduzido de 8 para 4 px por lado, mantendo min-height 44 px e gap de 16 px entre itens. Com fonte 24 px e entrelinha 1.4, a caixa de linha mede 33.6 px: a separação entre caixas de texto fica aproximadamente 26.4 px (44 − 33.6 + 16), dentro da referência de 24–32 px. O CTA recebe 8 px adicionais antes dele. Medida visual dos glifos pode variar; a área clicável não cai abaixo de 44 px. Desktop, fonte, cores, Shift/foco, assinatura, mensagem, padding geral e camada institucional permanecem intactos.
