@@ -321,3 +321,17 @@ O !important de font-size mobile supera as classes de tamanho que o WordPress ge
 ### Pendência após validação visual da V2.2
 
 O override de cor do H2 do Processo é temporário, aceito somente para esta validação. Após autorização, corrigir o atributo textColor/markup da instância salva na página, conferir o HTML servido e então testar a remoção da regra `.diged-create-v2 #como-funciona h2`. Não manter o override como substituto permanente da limpeza do conteúdo. Nenhum conteúdo do banco foi alterado nesta rodada.
+
+## Header V1 — wordmark oficial
+
+`parts/header.html` referencia `diged/header`, pattern técnico não disponível no inseridor, definido em `patterns/header.php`. O pattern contém somente blocos nativos Group, Image, Navigation e Navigation Link; PHP é usado apenas para resolver a URL do ativo no tema e a Home, escapadas por esc_url. Isso evita domínio fixo, recriação textual da marca e dependência de um attachment ID do banco. Não há registro manual ou functions.php. O header continua editável pelo Editor do Site.
+
+Ativo: original fornecido em `/Users/adilsondamasceno/Desktop/diged-logo.png`, RGBA 1024 × 576. Recorte por alfa não zero: caixa (57,151)–(951,373), limites finais exclusivos. Resultado `assets/images/diged-logo-web.png`, 894 × 222, 11373 bytes. Comparação dos bytes RGBA decodificados do recorte confirmou igualdade exata; sem resize, recoloração ou redesenho. O arquivo original externo foi preservado e não havia original versionado a substituir.
+
+Desktop: container 76rem (1216 px), fundo branco, logo à esquerda em 200 px de largura, navegação à direita. Padding vertical 32 px, lateral 16 px; sem altura fixa, sombra ou borda decorativa. Links CREATE `/create/`, LEARN `/learn/`, Sobre `/sobre/`, Vamos conversar `/contato/`. Ação final em peso 600 e sublinhado; demais itens peso 500. São destinos solicitados, não confirmação de que as páginas existem.
+
+Até 1024 px: logo 180 px (aproximadamente 45 px de altura), padding vertical 24 px; botão nativo abre overlay branco com links pretos. A escolha evita apertar a navegação entre 600 e 1024 px; o bloco Navigation mantém seus scripts nativos para abrir/fechar, teclado e foco. Não foi adicionado JavaScript próprio. A largura de 390 px comporta logo, gap e botão de 44 px.
+
+CSS em styles.css dentro de theme.json, restrito ao header/classes diged-header: dimensões do ativo, alinhamento, padding, mínimo de toque 44 px, hover coral, foco preto com outline e breakpoint do Navigation. Preto/branco 21:1; coral/branco aproximadamente 4.85:1. O link da marca tem nome acessível `DIG.ED — início`. Escala tipográfica e paleta não foram alteradas.
+
+Validação local: JSON, comentários/atributos de blocos, caminhos de arquivos, integridade pixel a pixel do recorte, preservação das CREATE/templates/footer e ausência de JS/plugin. Sem PHP/WordPress local para executar o pattern e validar serialização/renderização. Conferir após autorização no WordPress: logo/URL, menu em 390/768/1024/1440 px, Tab/Shift+Tab, Enter, Escape, foco no retorno e ausência de overflow. Customizações anteriores do header no banco podem prevalecer sobre parts/header.html; revisar no Editor do Site sem apagar alterações não auditadas. Nenhum commit, push ou deploy nesta etapa.
