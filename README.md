@@ -299,3 +299,25 @@ Botões têm token Button explícito de 16 px; labels 14 px e Small 14 px; capti
 Validação estática local: copy e hierarquia preservadas, JSON/atributos de blocos, HTML/âncoras, integridade da V1/templates/parts, isolamento dos seletores e alterações exatas dos presets. Sem WordPress local para validar renderização real. Conferir 320/390/768/1024/1440 px, zoom 200%, colunas empilhadas, textos longos e foco no staging após autorização.
 
 Um pattern já inserido não recebe estas alterações de markup automaticamente: a instância precisa ser substituída/atualizada deliberadamente para receber a classe da V2, o H2 preto e o novo padding. A alteração global de Body se aplica após deploy do tema, independentemente da substituição do pattern, salvo overrides do banco. Nenhum commit/push/deploy nesta revisão.
+
+## CREATE V2.2 — refinamento mobile
+
+Regras locais adicionais dentro de `.diged-create-v2`, sem modificar containers ou composição desktop:
+
+- Até 781 px, H1/H2/H3 usam overflow-wrap normal, word-break normal e hyphens none. Isso neutraliza a regra anterior overflow-wrap anywhere somente nos headings mobile. Removidos dois soft hyphens do hero (comunicação/movimento); nenhuma palavra ou copy foi alterada.
+- H1 Display XL no mobile: clamp entre 40 px em 320 px e 44 px em 390 px, limitado a 44 px até 781 px. Usa rem e mantém peso 600, tracking e entrelinha. A mesma faixa é aplicada somente aos displays da seção preta e CTA final. O statement Lançar/Apresentar/Mobilizar e outros headings não têm tamanho alterado. Acima de 781 px, os tamanhos anteriores permanecem.
+- Entregas: gap vertical entre colunas empilhadas passa de 32 para 48 px no mobile.
+- Processo mobile: 48 px antes de cada divisor, 16 px do divisor para a linha/etapa e 16 px entre número, título e descrição. O divisor segue visualmente com a etapa seguinte, sem wrappers novos ou mudança na ordem.
+- Body continua 18 px/1.55, sem alteração global. Cor coral e empilhamento preservados.
+
+### Causa verificada do H2 coral
+
+Na inspeção somente leitura de `https://staging.diged.com.br/create/`, o HTML retornou o H2 do Processo com classes `wp-block-heading has-h2-font-size has-brand-color has-text-color`. A folha gerada inclui `.has-brand-color{color: var(--wp--preset--color--brand) !important;}`. Portanto, a cor coral decorre da classe persistente no HTML servido; o arquivo local do pattern já usa has-black-color. Não é possível determinar só pelo HTML se o conteúdo salvo ou cache explica a divergência.
+
+Adicionada correção específica `.diged-create-v2 #como-funciona h2` em preto com !important para superar a classe de cor explícita da instância existente. Essa correção de cor vale em todas as larguras; não altera composição desktop, labels/números ou Apresentar. Também é recomendável atualizar o atributo textColor do H2 salvo no editor após autorização, para manter o conteúdo coerente; não foi alterado nenhum dado do staging.
+
+O !important de font-size mobile supera as classes de tamanho que o WordPress gera com !important. Não foram modificadas as métricas globais. Limite: sem quebras emergenciais, palavras excepcionalmente longas ainda podem exceder larguras muito estreitas/zoom elevado; não se oculta overflow para mascarar isso. Validar com a fonte real no WordPress em 320/390/781 px e zoom, sobretudo nos demais H2/H3 que mantêm os tamanhos aprovados.
+
+### Pendência após validação visual da V2.2
+
+O override de cor do H2 do Processo é temporário, aceito somente para esta validação. Após autorização, corrigir o atributo textColor/markup da instância salva na página, conferir o HTML servido e então testar a remoção da regra `.diged-create-v2 #como-funciona h2`. Não manter o override como substituto permanente da limpeza do conteúdo. Nenhum conteúdo do banco foi alterado nesta rodada.

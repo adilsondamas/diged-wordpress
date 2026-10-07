@@ -18,7 +18,7 @@
 <p class="has-brand-color has-text-color has-label-font-size">DIG.ED CREATE</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"textColor":"black","fontSize":"display-xl","level":1} -->
-<h1 class="wp-block-heading has-black-color has-text-color has-display-xl-font-size">Uma comu&shy;nicação essencial para colocar uma iniciativa em movi&shy;mento.</h1>
+<h1 class="wp-block-heading has-black-color has-text-color has-display-xl-font-size">Uma comunicação essencial para colocar uma iniciativa em movimento.</h1>
 <!-- /wp:heading -->
 <!-- wp:group {"tagName":"div","layout":{"type":"constrained","contentSize":"42rem","wideSize":"76rem","justifyContent":"left"},"style":{"spacing":{"blockGap":"var:preset|spacing|50"}}} -->
 <div class="wp-block-group">
