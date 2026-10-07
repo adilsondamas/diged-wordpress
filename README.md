@@ -412,3 +412,17 @@ O pattern mantém slug `diged/home-v1`. Apenas as quatro descrições de “Onde
 Método, diferencial e experiência mantêm seu ritmo. Não há espaço reservado para mídia. A futura zona descrita no Media System será um Group irmão entre `.diged-home-v1__method` e `.diged-home-v1__difference`, dentro da raiz full da Home: largura ampla por Group constrained e alinhamento wide, ou full usando toda a raiz. A mídia será inserida nesse novo Group, sem mover o conteúdo das seções adjacentes. Nenhum markup ou classe de mídia foi necessário agora. A documentação de Projetos selecionados permanece; nada de portfólio ou Case Zero foi renderizado.
 
 Como o pattern não é sincronizado, uma Home já inserida conserva as descrições anteriores até edição do conteúdo no WordPress. As regras CSS passam a valer para as instâncias com as mesmas classes. Validar a composição final no editor/frontend antes da publicação.
+
+## LEARN V1
+
+Pattern `diged/learn-v1` (DIG.ED — LEARN V1), em oito seções nativas editáveis. Inserir na página LEARN usando o template existente **Página com título no conteúdo** (`content-title`). Não foi criado template exclusivo nem modificada outra página. O conteúdo controla o único H1; sete H2 organizam as seções e doze H3 identificam entregas, contextos e etapas.
+
+Hero com label lateral e título amplo; desafio com destaque editorial; entregas em grid 2×2 sobre off-white, sem cards; contextos em três colunas; “Primeiro a aprendizagem” com protagonismo coral e texto branco; processo em linhas numeradas; diferencial preto com composição assimétrica; CTA branco. Azul não utilizado. Branco/coral ≈4,85:1, coral/branco ≈4,85:1 e branco/preto 21:1. As superfícies não definem cores de submarca.
+
+CSS em `styles.css` do theme.json, exclusivamente `.diged-learn-v1`, seguindo a arquitetura atual. Tokens e CSS anterior intactos. Largura externa até 76rem e leitura até 42rem. Desktop: macrospacing 96px, com 128px nos momentos de destaque e início do Hero em 64px. Até 1024px: Hero e diferencial passam a uma coluna. Até 781px: grids/etapas empilhados, macrospacing 64px, displays 40–44px, palavras sem quebra arbitrária e Body 18px/1.55 preservado. Links com mínimo 44px e foco por contorno; sem animações.
+
+CTA secundário leva a `#como-funciona`. CTAs de contato usam Navigation Link nativo, com ID/permalink de página publicada quando disponível e fallback para `/contato/`. Conferir destino antes da publicação. Patterns inseridos não se sincronizam automaticamente com futuras edições do arquivo.
+
+“Primeiro a aprendizagem” já é um Group editorial independente dentro da raiz full. Pode receber Image/Video após o conteúdo, ou um Group wide/full no mesmo fluxo, sem reorganizar as seções adjacentes. Para mídia em toda a largura, inseri-la como irmã do Group interno da seção. Sem altura fixa, reserva de espaço ou classe preventiva de mídia. Seguir [Media System V1](docs/media-system-v1.md): vídeo manual inicialmente; background automático somente após resolver fallback e controle de movimento. Nenhuma mídia ou placeholder foi inserido.
+
+Validação local: JSON, balanceamento dos blocos, copy e integridade das áreas protegidas. A inserção real, serialização no editor, responsividade e links precisam ser conferidos no WordPress em 390/781/1024/1440px. Sem WordPress/PHP local disponível para afirmar renderização validada.
