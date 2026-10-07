@@ -224,7 +224,7 @@ $diged_home_link = static function ( $slug, $label ) {
 <!-- wp:group {"className":"diged-home-v1__cell","layout":{"type":"default"}} -->
 <div class="wp-block-group diged-home-v1__cell">
 <!-- wp:paragraph {"fontSize":"body"} -->
-<p class="has-body-font-size">Produtos, serviços, programas, eventos, projetos e novas iniciativas.</p>
+<p class="has-body-font-size">Produtos, serviços, programas e novas iniciativas.</p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
@@ -242,7 +242,7 @@ $diged_home_link = static function ( $slug, $label ) {
 <!-- wp:group {"className":"diged-home-v1__cell","layout":{"type":"default"}} -->
 <div class="wp-block-group diged-home-v1__cell">
 <!-- wp:paragraph {"fontSize":"body"} -->
-<p class="has-body-font-size">Treinamentos, conteúdos educacionais e experiências de aprendizagem.</p>
+<p class="has-body-font-size">Treinamentos e experiências de aprendizagem.</p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
@@ -260,7 +260,7 @@ $diged_home_link = static function ( $slug, $label ) {
 <!-- wp:group {"className":"diged-home-v1__cell","layout":{"type":"default"}} -->
 <div class="wp-block-group diged-home-v1__cell">
 <!-- wp:paragraph {"fontSize":"body"} -->
-<p class="has-body-font-size">Especialistas, organizações e projetos que precisam transformar conhecimento em algo claro, acessível e utilizável.</p>
+<p class="has-body-font-size">Transformar conteúdo e expertise em algo claro e utilizável.</p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
@@ -278,7 +278,7 @@ $diged_home_link = static function ( $slug, $label ) {
 <!-- wp:group {"className":"diged-home-v1__cell","layout":{"type":"default"}} -->
 <div class="wp-block-group diged-home-v1__cell">
 <!-- wp:paragraph {"fontSize":"body"} -->
-<p class="has-body-font-size">Conteúdo visual, audiovisual e interativo pensado para comunicar, envolver ou ensinar.</p>
+<p class="has-body-font-size">Conteúdo visual, audiovisual e interativo.</p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

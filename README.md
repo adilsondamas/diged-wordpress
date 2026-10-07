@@ -400,3 +400,15 @@ Desktop: territórios lado a lado, três áreas de método e contextos em duas c
 Hero e territórios são Groups editáveis: blocos nativos Image, Video ou Cover podem ser acrescentados em seu fluxo, inclusive como faixas editoriais abaixo do texto; não há alturas fixas nem reserva obrigatória de mídia. Não é necessário transformar o Hero em duas colunas de texto/imagem. Dimensionamento e tratamento da mídia serão definidos quando existirem ativos aprovados. Método, diferencial e contextos permanecem independentes de imagens. Motion e microinterações são possibilidades futuras, não implementadas nesta versão.
 
 Após “Da ideia à entrega” e antes do diferencial, prever futuramente “PROJETOS SELECIONADOS — Estratégia que ganha forma.” com Groups wide/full e imagens/vídeos em grande escala, quando houver cases suficientemente fortes. **Nenhuma seção de portfólio, Case Zero, placeholder ou projeto fictício é renderizada na V1.**
+
+## Media System V1
+
+Regras e limites para Image, Cover e Video nativos estão em [docs/media-system-v1.md](docs/media-system-v1.md). A V1 prepara o uso editorial, acessibilidade, responsividade e performance sem inserir mídia nem alterar a Home. Imagem estática e vídeo manual são os caminhos iniciais; background automático depende de fallback estático e controle efetivo de movimento. Nenhum CSS, JS, token ou bloco adicional foi necessário nesta etapa.
+
+### Home V1.1 — contextos compactos
+
+O pattern mantém slug `diged/home-v1`. Apenas as quatro descrições de “Onde entramos” foram substituídas pela copy aprovada. A composição passa de quatro linhas título/descrição para duas colunas editoriais em duas fileiras: H3 acima de Body 18 em grafite, divisor superior, sem cards. Gap entre título e descrição: 16px; padding após divisor: 24px; intervalo entre fileiras: 48px, com 64px entre colunas. Até 781px: coluna única e intervalo de 32px entre contextos. A distância do H2 ao conjunto cai de 64 para 48px no desktop; mobile mantém 48px. Escala tipográfica e padding externo das seções preservados.
+
+Método, diferencial e experiência mantêm seu ritmo. Não há espaço reservado para mídia. A futura zona descrita no Media System será um Group irmão entre `.diged-home-v1__method` e `.diged-home-v1__difference`, dentro da raiz full da Home: largura ampla por Group constrained e alinhamento wide, ou full usando toda a raiz. A mídia será inserida nesse novo Group, sem mover o conteúdo das seções adjacentes. Nenhum markup ou classe de mídia foi necessário agora. A documentação de Projetos selecionados permanece; nada de portfólio ou Case Zero foi renderizado.
+
+Como o pattern não é sincronizado, uma Home já inserida conserva as descrições anteriores até edição do conteúdo no WordPress. As regras CSS passam a valer para as instâncias com as mesmas classes. Validar a composição final no editor/frontend antes da publicação.
