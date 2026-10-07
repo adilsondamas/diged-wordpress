@@ -384,3 +384,19 @@ Validação local: JSON, blocos estáticos e referências; integridade dos arqui
 ### Footer V1 — ritmo da navegação mobile
 
 Somente até 781 px: padding vertical dos links de navegação reduzido de 8 para 4 px por lado, mantendo min-height 44 px e gap de 16 px entre itens. Com fonte 24 px e entrelinha 1.4, a caixa de linha mede 33.6 px: a separação entre caixas de texto fica aproximadamente 26.4 px (44 − 33.6 + 16), dentro da referência de 24–32 px. O CTA recebe 8 px adicionais antes dele. Medida visual dos glifos pode variar; a área clicável não cai abaixo de 44 px. Desktop, fonte, cores, Shift/foco, assinatura, mensagem, padding geral e camada institucional permanecem intactos.
+
+## Home V1
+
+Pattern `diged/home-v1` (DIG.ED — Home V1), editável com blocos nativos. Inserir uma única vez no conteúdo da página escolhida como Home. A âncora `solucoes` pertence à seção CREATE + LEARN. Links usam páginas publicadas por slug e seus permalinks quando disponíveis; até lá, usam os destinos previstos `/create/`, `/learn/`, `/sobre/` e `/contato/`. Conferir esses destinos na publicação. Uma instância inserida não é sincronizada com alterações futuras do pattern.
+
+`front-page.html` exibe o conteúdo em alinhamento full, sem título automático: o H1 pertence ao Hero. Para editar a Home como página, selecionar essa página em Configurações → Leitura. Essa configuração é uma escolha de conteúdo, não um requisito da hierarquia para reconhecer o template `front-page.html`. Cabeçalho e rodapé continuam sendo as mesmas parts globais.
+
+A composição usa os limites locais já adotados (76rem externo, 42rem de leitura), Body 18 e sete seções: Hero; CREATE + LEARN; Da ideia à entrega; Diferencial; Onde entramos; Experiência; CTA. CREATE coral e LEARN preto são um teste de composição, não regras cromáticas de submarcas. Branco sobre coral: 4,85:1; branco sobre preto: 21:1. CSS exclusivamente sob `.diged-home-v1`, em `styles.css` do theme.json, seguindo a arquitetura existente. Nenhum token foi alterado.
+
+Desktop: territórios lado a lado, três áreas de método e contextos em duas colunas. Até 1024px, espaçamentos internos menores; até 781px, empilhamento, macrospacing 64px e displays 40–44px. Body permanece 18px/1.55. Sem animação. Validar a inserção no editor e o frontend em 390, 781, 1024 e 1440px, incluindo teclado, contraste, âncora e destinos.
+
+### Mídia — fase 2
+
+Hero e territórios são Groups editáveis: blocos nativos Image, Video ou Cover podem ser acrescentados em seu fluxo, inclusive como faixas editoriais abaixo do texto; não há alturas fixas nem reserva obrigatória de mídia. Não é necessário transformar o Hero em duas colunas de texto/imagem. Dimensionamento e tratamento da mídia serão definidos quando existirem ativos aprovados. Método, diferencial e contextos permanecem independentes de imagens. Motion e microinterações são possibilidades futuras, não implementadas nesta versão.
+
+Após “Da ideia à entrega” e antes do diferencial, prever futuramente “PROJETOS SELECIONADOS — Estratégia que ganha forma.” com Groups wide/full e imagens/vídeos em grande escala, quando houver cases suficientemente fortes. **Nenhuma seção de portfólio, Case Zero, placeholder ou projeto fictício é renderizada na V1.**
