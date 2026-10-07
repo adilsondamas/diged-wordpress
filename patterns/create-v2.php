@@ -8,8 +8,8 @@
  * Inserter: yes
  */
 ?>
-<!-- wp:group {"tagName":"div","layout":{"type":"constrained","contentSize":"64rem","wideSize":"76rem","justifyContent":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"align":"full"} -->
-<div class="wp-block-group alignfull">
+<!-- wp:group {"tagName":"div","layout":{"type":"constrained","contentSize":"64rem","wideSize":"76rem","justifyContent":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"align":"full","className":"diged-create-v2"} -->
+<div class="wp-block-group alignfull diged-create-v2">
 <!-- wp:group {"tagName":"section","layout":{"type":"constrained","contentSize":"76rem","wideSize":"76rem","justifyContent":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"top":"var:preset|spacing|100","bottom":"var:preset|spacing|100","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"align":"full"} -->
 <section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--100);padding-bottom:var(--wp--preset--spacing--100);padding-left:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40)">
 <!-- wp:group {"tagName":"div","layout":{"type":"constrained","contentSize":"76rem","wideSize":"76rem","justifyContent":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|60"}}} -->
@@ -185,8 +185,8 @@
 <!-- wp:paragraph {"textColor":"brand","fontSize":"label"} -->
 <p class="has-brand-color has-text-color has-label-font-size">04 / Do briefing à entrega</p>
 <!-- /wp:paragraph -->
-<!-- wp:heading {"textColor":"brand","fontSize":"h2","level":2} -->
-<h2 class="wp-block-heading has-brand-color has-text-color has-h2-font-size">Um ciclo curto. Uma entrega com começo, meio e fim.</h2>
+<!-- wp:heading {"textColor":"black","fontSize":"h2","level":2} -->
+<h2 class="wp-block-heading has-black-color has-text-color has-h2-font-size">Um ciclo curto. Uma entrega com começo, meio e fim.</h2>
 <!-- /wp:heading -->
 <!-- wp:separator {"backgroundColor":"graphite","className":"is-style-wide"} -->
 <hr class="wp-block-separator has-text-color has-graphite-color has-alpha-channel-opacity has-graphite-background-color has-background is-style-wide"/>
@@ -366,8 +366,8 @@
 <!-- /wp:group -->
 </section>
 <!-- /wp:group -->
-<!-- wp:group {"tagName":"section","layout":{"type":"constrained","contentSize":"76rem","wideSize":"76rem","justifyContent":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"top":"var:preset|spacing|90","bottom":"var:preset|spacing|90","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"align":"full","anchor":"conversar"} -->
-<section id="conversar" class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--90);padding-bottom:var(--wp--preset--spacing--90);padding-left:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40)">
+<!-- wp:group {"tagName":"section","layout":{"type":"constrained","contentSize":"76rem","wideSize":"76rem","justifyContent":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"top":"var:preset|spacing|100","bottom":"var:preset|spacing|100","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"align":"full","anchor":"conversar"} -->
+<section id="conversar" class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--100);padding-bottom:var(--wp--preset--spacing--100);padding-left:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40)">
 <!-- wp:group {"tagName":"div","layout":{"type":"constrained","contentSize":"76rem","wideSize":"76rem","justifyContent":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|60"}}} -->
 <div class="wp-block-group">
 <!-- wp:paragraph {"textColor":"brand","fontSize":"label"} -->

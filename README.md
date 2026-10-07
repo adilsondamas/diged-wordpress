@@ -262,3 +262,40 @@ Os paddings macro anteriores permanecem: 128/64/96/96/64/96/96 px, inclusive no 
 Conferir no WordPress a faixa full com o root padding, largura efetiva do post-content, colunas na transição de tablet, quebra dos botões, palavras longas dos displays e ausência de overflow em 320/390/768/1024/1440 px. Se necessário, propor ajuste de breakpoint somente para as colunas da CREATE V2, sem reduzir tokens tipográficos globais. A V2 não foi renderizada em um WordPress local nesta etapa: validação executada é estática, não prova visual ou de serialização pelo editor.
 
 Validação local: atributos JSON e pares de blocos, HTML, igualdade da copy normalizada com V1, âncoras, headings, cálculo de contraste e preservação byte a byte de theme.json, V1, page.html e parts. Nenhum commit, push ou deploy nesta rodada.
+
+## CREATE V2.1 — legibilidade e respiro (revisão local)
+
+Esta revisão substitui as observações anteriores sobre Body 16 px, H2 coral do Processo e ausência de CSS responsivo na V2. Não altera a arquitetura, copy ou o arquivo da V1.
+
+### Alterações
+
+- Token global `body`: 1.125rem (18 px na raiz de referência de 16 px), peso 400 e entrelinha 1.55 preservados. Não alteramos font-size do elemento html; larguras e spacing em rem continuam com os mesmos valores.
+- H5 tinha referência a Body: fixado em 1rem (16 px), conservando seu tamanho anterior. H1–H4, H6 e displays preservados. Labels, Small, Lead, Body L e Button mantêm os valores anteriores.
+- Captions usam explicitamente Small (14 px), peso 400 e entrelinha 1.45 para não crescerem por herança. Essa normalização alcança captions suportadas pelo elemento `caption` do WordPress, não qualquer parágrafo informalmente usado como legenda.
+- H2 do Processo retorna ao preto; labels/números coral e “Apresentar.” coral preservados.
+- CTA final: padding inline passa do token 90 (96 px) para 100 (128 px) em topo/base no desktop. Sem mudança de copy ou superfície.
+
+### CSS mínimo
+
+Regras adicionadas a `styles.css` dentro de theme.json, sem arquivo/enqueue/PHP. Todas as regras novas de layout se limitam a `.diged-create-v2`, classe adicionada ao grupo raiz do pattern. O CSS semântico tipográfico existente permanece intacto.
+
+- `min-width: 0` nas colunas e `overflow-wrap: anywhere` em texto/botões: quebra emergencial apenas quando uma palavra não cabe; não usa overflow hidden nem reduz fonte.
+- Até 1024 px: empilha todas as colunas, gap de 32 px (token 60), padding vertical 64 px (80) nas seções; hero e CTA final ficam com 96 px (90).
+- Até 781 px: CTA final cai para 64 px; hero permanece em 96 px; demais seções em 64 px.
+- Acima de 1024 px: mantém colunas, larguras e ritmo desktop; hero e CTA final 128 px, desafio/processo 64 px, demais 96 px.
+
+1024 px é a hipótese inicial para evitar três colunas estreitas e displays apertados em tablet; 781 px acompanha a divisão móvel das Columns nativas (782 px). Validar no WordPress antes de consolidar. `!important` é restrito aos paddings que precisam superar valores inline do bloco e ao wrap/flex-basis que precisa superar regras nativas de Columns. Sem JS, plugin, componente ou breakpoint adicional.
+
+### Alcance global do Body 18
+
+Os dois patterns possuem 15 parágrafos explícitos `body`: desafio (1), entregas (3), contextos (3), etapas (5), diferencial (2) e introdução do CTA final (1). Esses textos passam a 18 px tanto na V2 quanto na V1, sem editar o arquivo da V1. A V1 mantém sua composição, mas não é uma captura congelada dos estilos globais.
+
+Também herdam a nova base textos sem tamanho explícito: parágrafos/listas do conteúdo das páginas/posts, resumo de posts, descrições de arquivos, mensagens de lista vazia, texto da 404, texto de paginação e descrição do site no footer quando não houver tamanho específico. Elementos nativos com regras próprias em em podem acompanhar proporcionalmente essa base. O título textual do site pode ter regra própria do WordPress; não representa o wordmark. Conteúdo e estilos salvos no banco podem alterar a herança — não é possível inventariar exatamente as instâncias publicadas somente pelo Git.
+
+Botões têm token Button explícito de 16 px; labels 14 px e Small 14 px; captions recebem Small. Headings/displays e todos os outros presets foram preservados. Links inline acompanham o tamanho do texto ao redor. Conteúdo que tiver sido manualmente definido em px continua com esse valor.
+
+### Validação e aplicação
+
+Validação estática local: copy e hierarquia preservadas, JSON/atributos de blocos, HTML/âncoras, integridade da V1/templates/parts, isolamento dos seletores e alterações exatas dos presets. Sem WordPress local para validar renderização real. Conferir 320/390/768/1024/1440 px, zoom 200%, colunas empilhadas, textos longos e foco no staging após autorização.
+
+Um pattern já inserido não recebe estas alterações de markup automaticamente: a instância precisa ser substituída/atualizada deliberadamente para receber a classe da V2, o H2 preto e o novo padding. A alteração global de Body se aplica após deploy do tema, independentemente da substituição do pattern, salvo overrides do banco. Nenhum commit/push/deploy nesta revisão.
