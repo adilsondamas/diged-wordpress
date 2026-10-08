@@ -484,3 +484,9 @@ Destino comercial DIGED Studio confirmado pelo responsável: link wa.me com núm
 ### Contato V1.2 — preparação visual do Contact Form 7
 
 CSS para controles reais `.wpcf7` limitado a `.diged-contact-v1`: Body 18, labels visíveis, campos fluidos, foco preto, botão coral/branco e erros grafite legíveis. Sem JS próprio, fake form ou shortcode sem ID. Ver [configuração pronta para o painel](docs/contact-form-7-setup.md). Plugin ativo e destinatário Gmail confirmados; não existe caixa @diged.com.br. From permanece pendente até verificar transporte autenticado; envio não testado nem declarado funcional. Pattern permanece como na integração WhatsApp, sem inserir formulário ou orientação prematura.
+
+### Contato V1.3 — apresentação do CF7 real
+
+Introdução restaurada no pattern após confirmação do formulário funcional pelo responsável. CSS local adaptado ao markup público do CF7: labels 600, valores 400, ritmo de 24px entre campos, largura fluida e retornos sem bordas verde/laranja. Columns real preservado. Ver diagnóstico e limitações em [contact-form-7-setup.md](docs/contact-form-7-setup.md): o staging inspecionado não inclui select nem aviso de privacidade; lógica e dados não foram alterados. A instância já inserida precisa receber a introdução no editor; não substituir seu formulário real pelo pattern. Sem testes de envio ou alterações SMTP.
+
+Acabamento final Contato V1.3: H2 do formulário equiparado ao contato direto usando preset existente `h-1`; aviso `.diged-contact-v1__privacy-note` contemplado e Columns real empilhado até 1024px. Link WhatsApp preservado byte a byte. Introdução já existe no pattern, mas precisa ser acrescentada na instância salva do Gutenberg. Select, mensagem obrigatória e botão agora confirmados no HTML público; SMTP/envio preservados.

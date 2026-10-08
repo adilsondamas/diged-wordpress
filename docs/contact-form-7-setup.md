@@ -115,3 +115,25 @@ Aprovar aviso e política, definir retenção e acesso à caixa Gmail, considera
 - https://contactform7.com/configuration-errors/email-not-in-site-domain/
 - https://contactform7.com/comment-blacklist/
 - https://contactform7.com/configuration-validator-faq/
+
+## V1.3 — inspeção pública e refinamento visual
+
+O responsável confirmou FluentSMTP/Gmail autenticado e recebimento real. Isso atualiza o estado histórico acima; o transporte não foi inspecionado nem modificado nesta rodada. A leitura pública de `/contato/` encontrou CF7 6.2.1, formulário real 49, dentro de Columns Gutenberg (33,33% / 66,66%). Nenhum ID foi incorporado ao pattern: a associação funcional permanece na página salva.
+
+Markup encontrado: labels envolvendo campos, br entre label e controle, campos your-name/your-email, your-subject como texto obrigatório, your-message opcional, submit “Enviar”, live region nativa e `.wpcf7-response-output`. Não há select nem aviso de privacidade nessa resposta pública. Não alterar esses campos via CSS nem trocar tags no banco nesta rodada: a adequação ao esquema aprovado depende de edição explícita no CF7, preservando o Mail configurado.
+
+CSS atualizado: 24px entre grupos de campo; 8px entre label e controle; labels 600 e valores 400 (para não herdar peso dos labels envolvidos); campos 100%, min-height 44px; foco visível e textarea redimensionável verticalmente. Ocultar somente br diretamente dentro dos labels elimina espaçamento redundante; não remove labels ou elementos acessíveis. Retornos usam texto grafite, superfície branca e divisor grafite discreto independentemente de sucesso/falha, sem código verde/laranja; o significado permanece na mensagem textual nativa. Select e aviso de privacidade têm estilo preparado, mas estão ausentes no formulário publicado e não foram verificados visualmente.
+
+A introdução aprovada foi restaurada no pattern local. Patterns não sincronizados não atualizam a instância salva: na página real, inserir o parágrafo abaixo do H2 na coluna esquerda, mantendo o bloco CF7 atual à direita. Não reinserir todo o pattern por cima do formulário funcional. Nenhuma alteração de painel foi feita.
+
+Verificações realizadas: inspeção read-only do HTML público, correspondência dos seletores, JSON, blocos e diff. Não houve envio de teste, acionamento real dos estados de sucesso/falha, inspeção visual em navegador ou teste de foco por teclado. Após publicação autorizada: conferir 390/781/1024/1440px, foco, select quando configurado, textarea e respostas reais, preservando o transporte já validado.
+
+## Acabamento final V1.3 — estado público atualizado
+
+Nova leitura pública confirma select `your-topic`, mensagem obrigatória, botão “Enviar mensagem ↗” e aviso `.diged-contact-v1__privacy-note`. As divergências registradas na inspeção anterior quanto à ausência desses campos estão superadas. Envio/Gmail/remetente autenticado foram confirmados pelo responsável; nenhuma configuração foi alterada nem envio de teste realizado pelo agente.
+
+CSS agora contempla a classe real do aviso, sem mudar o texto. H2 da seção recebe o mesmo token H1 local usado em contato direto. Columns nativo publicado mantém proporções desktop, gap 64px e empilha até 1024px com gap 32px. Labels/campos/retornos usam os seletores reais já preparados. Região de anúncio e estado aria do plugin permanecem intactos.
+
+Pendência no Gutenberg: inserir na coluna esquerda, abaixo do H2, o parágrafo já restaurado no pattern: “Preencha o formulário abaixo. Assim, já teremos um ponto de partida para responder com mais contexto.” Preservar o bloco CF7 existente à direita e o CTA WhatsApp validado. O aviso público menciona Política de Privacidade sem link; vincular somente quando existir destino real aprovado, sem inventar URL. Não substituir a página inteira pelo pattern, que não carrega o vínculo ao formulário real salvo no banco.
+
+Verificação nesta rodada: inspeção HTML read-only do staging, select/textarea/submit/classes de privacidade/live region; JSON e diff local. Testes visuais em viewports e interação por teclado/estados de retorno ainda exigem navegador após aplicação autorizada; não foram simulados como resultado de envio real.

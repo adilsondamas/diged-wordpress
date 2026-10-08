@@ -63,6 +63,9 @@
 <!-- wp:heading {"fontSize":"h2","level":2} -->
 <h2 class="wp-block-heading has-h2-font-size">Prefere enviar os detalhes?</h2>
 <!-- /wp:heading -->
+<!-- wp:paragraph {"fontSize":"body"} -->
+<p class="has-body-font-size">Preencha o formulário abaixo. Assim, já teremos um ponto de partida para responder com mais contexto.</p>
+<!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 </div>
