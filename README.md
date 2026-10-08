@@ -426,3 +426,13 @@ CTA secundário leva a `#como-funciona`. CTAs de contato usam Navigation Link na
 “Primeiro a aprendizagem” já é um Group editorial independente dentro da raiz full. Pode receber Image/Video após o conteúdo, ou um Group wide/full no mesmo fluxo, sem reorganizar as seções adjacentes. Para mídia em toda a largura, inseri-la como irmã do Group interno da seção. Sem altura fixa, reserva de espaço ou classe preventiva de mídia. Seguir [Media System V1](docs/media-system-v1.md): vídeo manual inicialmente; background automático somente após resolver fallback e controle de movimento. Nenhuma mídia ou placeholder foi inserido.
 
 Validação local: JSON, balanceamento dos blocos, copy e integridade das áreas protegidas. A inserção real, serialização no editor, responsividade e links precisam ser conferidos no WordPress em 390/781/1024/1440px. Sem WordPress/PHP local disponível para afirmar renderização validada.
+
+### LEARN V1.1 — três ajustes de composição
+
+Somente CSS local; pattern e copy da V1 intactos. “O que entregamos” ocupa horizontalmente o container existente de 76rem com quatro colunas, uma linha divisória contínua e sem bordas individuais. Off-white preservado. Entre 782–1024px, duas colunas; até 781px, uma. Ordem de leitura permanece Estrutura → Design de aprendizagem → Experiência → Produção digital.
+
+“Onde LEARN entra” usa três faixas editoriais, título à esquerda e descrição à direita. H3 semântico recebe localmente o tamanho do token H2 (32–40px), peso existente 600, entrelinha 1.05 e tracking -.02em. Apenas Ensinar mantém coral; demais títulos pretos, descrições em grafite e Body 18. Tablet mantém duas áreas com gap 32px; mobile empilha título/descrição com gap 24px e padding vertical 32px por contexto. Sem cards ou mudança no H2 da seção.
+
+No diferencial preto, headline e parágrafo deixam de disputar a mesma linha. Headline ocupa até 19ch dentro do container; parágrafo abaixo, até 42rem, alinhado à direita no desktop e à esquerda até 1024px. Distância entre os grupos: 64px desktop, 48px tablet/mobile. Display preservado; não há br nem quebra fixa: as linhas variam com viewport e fonte. Mobile remove o limite de 19ch para aproveitar a largura disponível.
+
+Nenhum padding externo de seção foi alterado. Hero, desafio, seção coral, processo, CTA e demais páginas/parts/templates permanecem intactos. Sem mídia, markup reservado ou JavaScript. Validar visualmente em 390/781/782/1024/1440px no WordPress; a revisão local verifica CSS/JSON e integridade do conteúdo, sem afirmar renderização validada.
