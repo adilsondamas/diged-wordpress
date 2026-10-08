@@ -38,9 +38,18 @@
 <!-- wp:heading {"fontSize":"h2","level":2} -->
 <h2 class="wp-block-heading has-h2-font-size">Prefere conversar diretamente?</h2>
 <!-- /wp:heading -->
+<!-- wp:group {"className":"diged-contact-v1__direct-content","layout":{"type":"default"}} -->
+<div class="wp-block-group diged-contact-v1__direct-content">
 <!-- wp:paragraph {"fontSize":"body"} -->
 <p class="has-body-font-size">Pelo WhatsApp Business da DIG.ED, podemos trocar as primeiras informações e entender o contexto do seu projeto.</p>
 <!-- /wp:paragraph -->
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"brand","textColor":"white","className":"diged-contact-v1__whatsapp"} -->
+<div class="wp-block-button diged-contact-v1__whatsapp"><a class="wp-block-button__link has-white-color has-brand-background-color has-text-color has-background wp-element-button" href="https://wa.me/5511914918343?text=Ol%C3%A1%21%20Conheci%20a%20DIG.ED%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto">Conversar pelo WhatsApp <span aria-hidden="true">↗</span></a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 </section>
@@ -49,9 +58,13 @@
 <section class="wp-block-group diged-contact-v1__section diged-contact-v1__form">
 <!-- wp:group {"className":"diged-contact-v1__inner","layout":{"type":"default"}} -->
 <div class="wp-block-group diged-contact-v1__inner">
+<!-- wp:group {"className":"diged-contact-v1__form-intro","layout":{"type":"default"}} -->
+<div class="wp-block-group diged-contact-v1__form-intro">
 <!-- wp:heading {"fontSize":"h2","level":2} -->
 <h2 class="wp-block-heading has-h2-font-size">Prefere enviar os detalhes?</h2>
 <!-- /wp:heading -->
+</div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 </section>

@@ -62,3 +62,21 @@ Validar labels/for, required/aria-required, erro associado a cada campo, resumo/
 - [Mensagens](https://contactform7.com/editing-messages/)
 - [Modos demo e skip_mail](https://contactform7.com/additional-settings/)
 - [Validação não testa entrega](https://contactform7.com/configuration-validator-faq/)
+
+## V1.1 — template e largura
+
+A inspeção pública de `/contato/` encontrou um `core/post-title` (“VAMOS CONVERSAR”) e post-content sem `alignfull`, limitados pelo main constrained. Essa estrutura não corresponde a `templates/content-title.html` do repositório e produz dois H1. Não é possível concluir pela URL se a origem é seleção de template ou personalização salva no banco.
+
+No painel, quando autorizado: abrir a página Contato → configurações da página → Template → selecionar **Página com título no conteúdo** → salvar. Se já estiver selecionado, inspecionar a personalização salva desse template no Editor do site e comparar com o arquivo do tema antes de decidir qualquer restauração. Não remover personalizações automaticamente. Confirmar no frontend ausência do título automático e post-content com `alignfull`. Nada disso foi executado nesta tarefa.
+
+O pattern mantém sua raiz full e superfícies no fluxo dessa raiz; interiores agora usam 76rem inclusive no formulário. Não há escape via 100vw, margem negativa ou override do main. Hero já tinha H1 amplo e lead deslocado à direita: passa a funcionar na largura prevista quando o template correto estiver ativo.
+
+Inserir o CTA WhatsApp validado dentro do Group `diged-contact-v1__direct-content`, após o parágrafo. Inserir a copy de introdução pendente dentro de `diged-contact-v1__form-intro`. O bloco real Contact Form 7 deve ser irmão desse Group, diretamente no Group interno off-white. CSS ativa duas colunas somente quando encontra o wrapper nativo `.wp-block-contact-form-7-contact-form-selector` ou `.wpcf7`. Conferir esses wrappers na versão instalada; se divergirem, adaptar o seletor quando houver integração real. Sem formulário, só há a introdução existente, sem segunda coluna vazia renderizada. Shortcode renderizado diretamente como `.wpcf7` também é contemplado.
+
+## Atualização V1.2 — WhatsApp integrado localmente
+
+O responsável confirmou DIGED Studio e o número comercial 5511914918343. A pendência de fornecimento do WhatsApp descrita acima está resolvida. O pattern contém agora o Button nativo com o link exato aprovado e mensagem pré-preenchida, na coluna de conteúdo direto. Não há número exibido como texto, botão flutuante ou envio automático. O teste de abertura no dispositivo continua pendente; nenhuma mensagem foi enviada nesta implementação. Destinatário comercial de e-mail e integração do formulário continuam pendentes. Não é necessário configurar plugin para esse link.
+
+## Atualização — preparação do CF7
+
+Plugin ativo e destinatário `adilsondamas@gmail.com` confirmados pelo responsável. Não há caixa @diged.com.br; From e transporte continuam pendentes. A configuração atual recomendada, código da aba Form e testes estão em [contact-form-7-setup.md](contact-form-7-setup.md), que prevalece sobre as pendências históricas de instalação e destinatário acima. Nenhum ID real foi informado ou inventado, nem configuração aplicada ao painel.
