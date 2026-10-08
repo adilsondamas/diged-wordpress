@@ -452,3 +452,9 @@ Não foram encontrados destinos profissionais aprovados para WhatsApp Business D
 CREATE, LEARN e Contato usam os destinos já estabelecidos no projeto (`/create/`, `/learn/`, `/contato/`), com Navigation Link vinculado ao ID/permalink da página publicada quando encontrada na inserção. Conferir existência no WordPress antes da publicação; nenhuma URL profissional foi inventada. O pattern não é sincronizado com instâncias já inseridas.
 
 Validação local: JSON, balanceamento de blocos e integridade das áreas protegidas. Falta validar inserção/renderização no WordPress, links e composição em 390/781/782/1024/1440px. Sem WordPress/PHP local para confirmar renderização. Nenhuma alteração em Header, Footer, Home, CREATE, LEARN ou templates; sem JavaScript, mídia, cards, equipe fictícia ou placeholders.
+
+### Sobre V1.1 — hierarquia e respiro
+
+Os H2 de Trajetória, Nosso olhar e Nossa atuação usam localmente o tamanho existente H1 (40–56px), mantendo semântica H2, peso 600, tracking existente e entrelinha 1.05. Não mudam Hero, display do fundador ou CTA. Quebra de palavras normal e hyphens none permanecem. Somente “desenhar” recebe a formatação inline nativa de cor do Gutenberg (`mark.has-inline-color.has-brand-color`, fundo transparente), dentro do mesmo H2 e sem br. Coral sobre off-white tem contraste aproximado de 4,3:1, adequado ao título grande (AA requer 3:1); demais palavras permanecem pretas.
+
+Até 781px, a distância da headline ao grupo de identificação passa de 48 para 64px; entre identificação e biografia, de 24 para 48px. Nome e “Fundador da DIG.ED” ficam juntos com margem de 16px. Colunas desktop/tablet, Body 18/1.55, copy e superfícies intactos. CSS todo restrito a `.diged-about-v1`. Em instâncias já inseridas, aplicar a formatação inline de “desenhar” no editor, pois o pattern não é sincronizado. Verificar visualmente quebras e espaçamento no WordPress, especialmente em 390px; a validação local não substitui essa inspeção.

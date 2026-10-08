@@ -89,7 +89,7 @@ $diged_about_link = static function ( $slug, $label ) {
 <p class="has-label-font-size">NOSSO OLHAR</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"fontSize":"h2","level":2} -->
-<h2 class="wp-block-heading has-h2-font-size">Pensar, desenhar e produzir.</h2>
+<h2 class="wp-block-heading has-h2-font-size">Pensar, <mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-brand-color">desenhar</mark> e produzir.</h2>
 <!-- /wp:heading -->
 <!-- wp:group {"className":"diged-about-v1__principles","layout":{"type":"default"}} -->
 <div class="wp-block-group diged-about-v1__principles">
