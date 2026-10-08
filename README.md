@@ -436,3 +436,19 @@ Somente CSS local; pattern e copy da V1 intactos. “O que entregamos” ocupa h
 No diferencial preto, headline e parágrafo deixam de disputar a mesma linha. Headline ocupa até 19ch dentro do container; parágrafo abaixo, até 42rem, alinhado à direita no desktop e à esquerda até 1024px. Distância entre os grupos: 64px desktop, 48px tablet/mobile. Display preservado; não há br nem quebra fixa: as linhas variam com viewport e fonte. Mobile remove o limite de 19ch para aproveitar a largura disponível.
 
 Nenhum padding externo de seção foi alterado. Hero, desafio, seção coral, processo, CTA e demais páginas/parts/templates permanecem intactos. Sem mídia, markup reservado ou JavaScript. Validar visualmente em 390/781/782/1024/1440px no WordPress; a revisão local verifica CSS/JSON e integridade do conteúdo, sem afirmar renderização validada.
+
+## Sobre V1
+
+Pattern `diged/about-v1` (DIG.ED — Sobre V1), com seis seções editáveis; usar o template existente **Página com título no conteúdo** (`content-title`). Hero amplo com lead deslocado à direita; trajetória com headline e prosa em duas áreas; princípios numerados com divisores; fundador em superfície preta; atuação em duas faixas editoriais; CTA final branco. Sequência: branco → branco → off-white → preto → branco → branco. Sem azul nesta versão. Hierarquia: um H1, cinco H2, seis H3 (três princípios, nome do fundador e duas ofertas).
+
+CSS exclusivamente sob `.diged-about-v1`, na propriedade styles.css do theme.json. Sem mudança de tokens ou do CSS anterior. Container até 76rem e texto até 42rem. Desktop acima de 1024px: composições assimétricas. De 782 a 1024px: trajetória empilhada e gaps reduzidos em fundador/princípios. Até 781px: demais grids empilhados, macrospacing 64px, displays 40–44px, Body 18px/1.55 intacto. Sem hifenização automática. Links com mínimo 44px, sublinhado, hover coral e contorno de foco. Branco/preto 21:1 e coral/branco aproximadamente 4,85:1.
+
+### Fotografia e contatos pendentes
+
+Conforme [Media System V1](docs/media-system-v1.md), a fotografia real poderá ser inserida como Image nativo dentro do primeiro Group de `diged-about-v1__founder-grid`, junto da identificação e em relação à biografia. Essa coluna já contém nome e identificação: não há reserva vazia nem altura fixa. Inserir fotografia com proporção preservada e alt contextual. O empilhamento mobile já contempla o mesmo Group; não é necessário reconstruir a seção. Nenhuma mídia foi inserida.
+
+Não foram encontrados destinos profissionais aprovados para WhatsApp Business DIG.ED, LinkedIn ou e-mail no conteúdo/configuração versionados. Não foram renderizados links, ícones, dados pessoais ou placeholders desses canais. Quando fornecidos, inserir uma linha de links após a biografia, com nome acessível, ícone decorativo opcional, foco visível e área mínima de 44px. Verificar destinos reais e contraste sobre preto nessa integração. A busca local não permite confirmar configurações existentes exclusivamente no banco do WordPress.
+
+CREATE, LEARN e Contato usam os destinos já estabelecidos no projeto (`/create/`, `/learn/`, `/contato/`), com Navigation Link vinculado ao ID/permalink da página publicada quando encontrada na inserção. Conferir existência no WordPress antes da publicação; nenhuma URL profissional foi inventada. O pattern não é sincronizado com instâncias já inseridas.
+
+Validação local: JSON, balanceamento de blocos e integridade das áreas protegidas. Falta validar inserção/renderização no WordPress, links e composição em 390/781/782/1024/1440px. Sem WordPress/PHP local para confirmar renderização. Nenhuma alteração em Header, Footer, Home, CREATE, LEARN ou templates; sem JavaScript, mídia, cards, equipe fictícia ou placeholders.
