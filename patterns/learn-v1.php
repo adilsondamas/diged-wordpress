@@ -42,7 +42,7 @@ $diged_learn_contact = static function ( $label ) {
 <!-- wp:paragraph {"fontSize":"lead"} -->
 <p class="has-lead-font-size">Estruturamos conteúdos e expertise para criar experiências de aprendizagem digitais que ajudam pessoas a compreender, desenvolver e aplicar conhecimento.</p>
 <!-- /wp:paragraph -->
-<!-- wp:navigation {"overlayMenu":"never","ariaLabel":"Quero transformar meu conhecimento","className":"diged-learn-v1__contact","fontSize":"button","layout":{"type":"flex"}} -->
+<!-- wp:navigation {"overlayMenu":"never","ariaLabel":"Quero transformar meu conhecimento","className":"diged-learn-v1__contact","textColor":"white","fontSize":"button","layout":{"type":"flex"}} -->
 <?php $diged_learn_contact( 'Quero transformar meu conhecimento' ); ?>
 <!-- /wp:navigation -->
 <!-- wp:paragraph {"fontSize":"button","className":"diged-learn-v1__anchor"} -->
@@ -354,7 +354,7 @@ $diged_learn_contact = static function ( $label ) {
 <!-- wp:paragraph {"fontSize":"lead"} -->
 <p class="has-lead-font-size">Conte o que você precisa ensinar, compartilhar ou transformar em experiência.</p>
 <!-- /wp:paragraph -->
-<!-- wp:navigation {"overlayMenu":"never","ariaLabel":"Conversar sobre meu projeto","className":"diged-learn-v1__contact","fontSize":"button","layout":{"type":"flex"}} -->
+<!-- wp:navigation {"overlayMenu":"never","ariaLabel":"Conversar sobre meu projeto","className":"diged-learn-v1__contact","textColor":"white","fontSize":"button","layout":{"type":"flex"}} -->
 <?php $diged_learn_contact( 'Conversar sobre meu projeto' ); ?>
 <!-- /wp:navigation -->
 </div>

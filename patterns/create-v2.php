@@ -386,13 +386,10 @@
 <!-- wp:buttons {"layout":{"type":"flex","flexWrap":"wrap"}} -->
 <div class="wp-block-buttons">
 <!-- wp:button {"backgroundColor":"brand","textColor":"white","style":{"border":{"radius":"0px"}},"fontSize":"button"} -->
-<div class="wp-block-button has-custom-font-size has-button-font-size"><a class="wp-block-button__link has-white-color has-brand-background-color has-text-color has-background wp-element-button" href="#contato-provisorio" style="border-radius:0px">Conversar sobre meu projeto</a></div>
+<div class="wp-block-button has-custom-font-size has-button-font-size"><a class="wp-block-button__link has-white-color has-brand-background-color has-text-color has-background wp-element-button" href="/contato/" style="border-radius:0px">Conversar sobre meu projeto</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
-<!-- wp:paragraph {"textColor":"graphite","fontSize":"small","anchor":"contato-provisorio"} -->
-<p id="contato-provisorio" class="has-graphite-color has-text-color has-small-font-size">Canal de contato a definir nesta versão de validação. Este protótipo não envia mensagens.</p>
-<!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 </section>
