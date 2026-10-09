@@ -86,7 +86,7 @@
 <li>Dar continuidade às conversas e preparar propostas, quando solicitado.</li>
 <!-- /wp:list-item -->
 <!-- wp:list-item -->
-<li>Manter o funcionamento e a segurança dos canais de contato.</li>
+<li>Manter o funcionamento e a segurança dos canais de contato, incluindo a prevenção de spam e abuso no formulário.</li>
 <!-- /wp:list-item -->
 <!-- wp:list-item -->
 <li>Atender obrigações aplicáveis e tratar eventuais questões relacionadas ao contato ou à contratação.</li>
@@ -131,6 +131,9 @@
 <!-- /wp:list-item -->
 <!-- wp:list-item -->
 <li><strong>Google/Gmail:</strong> envio autenticado, recebimento e gestão das mensagens de e-mail.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><strong>Cloudflare Turnstile (modo Managed):</strong> verificação de segurança integrada ao formulário de contato para ajudar a prevenir spam e abuso automatizado.</li>
 <!-- /wp:list-item -->
 <!-- wp:list-item -->
 <li><strong>WhatsApp Business:</strong> canal alternativo de comunicação, quando escolhido por você.</li>
@@ -233,6 +236,9 @@
 <!-- /wp:heading -->
 <!-- wp:paragraph {"fontSize":"body"} -->
 <p class="has-body-font-size">O site utiliza WordPress e componentes que podem empregar cookies, armazenamento no navegador e registros técnicos para funções como navegação, segurança e funcionamento dos recursos.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"fontSize":"body"} -->
+<p class="has-body-font-size">Ao carregar o formulário, o Cloudflare Turnstile processa sinais técnicos, como endereço IP, informações do navegador, características da conexão segura e identificação do site, para distinguir acessos humanos de automações. Segundo a Cloudflare, esses sinais também são utilizados para aprimorar a detecção de bots. Saiba mais no <a href="https://www.cloudflare.com/turnstile-privacy-policy/">Adendo de Privacidade do Turnstile</a>.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"fontSize":"body"} -->
 <p class="has-body-font-size">As fontes do tema são hospedadas junto ao próprio site. Não há código de analytics ou pixels de publicidade implementado no tema DIG.ED.</p>
